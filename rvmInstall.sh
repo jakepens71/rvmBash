@@ -54,18 +54,17 @@ sudo unzip /tmp/instantclient-sdk-linux.x64-11.2.0.4.0.zip
 
 sudo apt-get install libaio1
 
-sudo cd instantclient_11_2
+cd instantclient_11_2
 
 sudo ln -s libclntsh.so.11.1 libclntsh.so
 
-export LD_LIBRARY_PATH=/opt/oracle/instantclient_11_2
+echo "export DYLD_LIBRARY_PATH=/opt/oracle/instantclient_11_2" | sudo tee .bashrc -a 
 
 source ~/.bashrc
 
 echo 'Attempting to install ruby-oci8'
 
-gem install ruby-oci8 -v '2.1.5'
-
+gem install ruby-oci8
 
 echo "Attempting to install node version manager"
 
