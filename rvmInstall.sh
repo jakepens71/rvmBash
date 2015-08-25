@@ -72,6 +72,16 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | b
 
 nvm install stable
 
-nvm use stable
+echo "nvm current stable" | sudo tee .bashrc -a
+
+source ~/.bashrc 
 
 node -v && npm -v
+
+echo "Installing Sublime Text Editor 2"
+
+sudo add-apt-repository ppa:webupd8team/sublime-text-2
+
+sudo apt-get update
+
+sudo apt-get install sublime-text
