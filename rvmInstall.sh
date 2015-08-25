@@ -8,9 +8,19 @@ echo "Installing curl"
 sudo apt-get install curl
 
 echo "Installing RVM and Ruby"
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 
-\curl -sSL https://get.rvm.io | bash -s stable
+sudo \curl -L https://get.rvm.io | bash -s stable
+
+source ~/.rvm/scripts/rvm
+
+rvm requirements
+
+rvm install ruby
+
+rvm use ruby --default
+
+cd $HOME
 
 echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> .bashrc
 
@@ -64,3 +74,5 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | b
 nvm install stable
 
 nvm use stable
+
+node -v && npm -v
