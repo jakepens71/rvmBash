@@ -5,12 +5,12 @@ clear
 sudo apt-get update
 
 echo "Installing curl"
-sudo apt-get install curl
+sudo apt-get install curl -y
 
 echo "Installing RVM and Ruby"
 command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 
-sudo \curl -L https://get.rvm.io | bash -s stable
+sudo \curl -L https://get.rvm.io | bash -s stable -y
 
 source ~/.rvm/scripts/rvm
 
@@ -32,7 +32,7 @@ gem install rails --no-ri --no-rdoc
 
 echo "Installing git"
 
-sudo apt-get install git-core
+sudo apt-get install git-core -y
 
 echo "Installing Oracle Instant Client"
 
@@ -58,7 +58,7 @@ cd instantclient_11_2
 
 sudo ln -s libclntsh.so.11.1 libclntsh.so
 
-echo "export DYLD_LIBRARY_PATH=/opt/oracle/instantclient_11_2" | sudo tee .bashrc -a 
+echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_11_2" | sudo tee .bashrc -a 
 
 source ~/.bashrc
 
@@ -70,7 +70,7 @@ echo "Attempting to install node version manager"
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
 
-nvm install stable
+nvm install stable -y
 
 echo "nvm use stable" | sudo tee .bashrc -a
 
@@ -80,11 +80,11 @@ node -v && npm -v
 
 echo "Installing Sublime Text Editor 2"
 
-sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo add-apt-repository ppa:webupd8team/sublime-text-2 -y
 
-sudo apt-get update
+sudo apt-get update -y
 
-sudo apt-get install sublime-text
+sudo apt-get install sublime-text -y
 
 echo "Installing gruny bower yeoman"
 
