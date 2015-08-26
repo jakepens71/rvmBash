@@ -10,13 +10,13 @@ sudo apt-get install curl -y
 echo "Installing RVM and Ruby"
 command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 
-sudo \curl -L https://get.rvm.io | bash -s stable -y
+sudo \curl -L https://get.rvm.io | bash -s stable
 
 source ~/.rvm/scripts/rvm
 
 rvm requirements
 
-rvm install ruby
+rvm install ruby-2.2.2
 
 rvm use ruby --default
 
@@ -67,6 +67,8 @@ echo 'Attempting to install ruby-oci8'
 gem install ruby-oci8
 
 echo "Attempting to install node version manager"
+
+sudo apt-get install nodejs -y
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
 
