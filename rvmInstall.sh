@@ -36,21 +36,21 @@ sudo apt-get install git-core -y
 
 echo "Installing Oracle Instant Client"
 
-sudo mkdir -p /opt/oracle
+#sudo mkdir -p /opt/oracle
+
+sudo apt-get install aria2 -y
 
 cd /tmp
 
-wget http://download.oracle.com/otn/linux/instantclient/11204/instantclient-basic-linux.x64-11.2.0.4.0.zip
+aria2c http://codelib.pennunited.com/PennUnited_Code_Library/XUbuntu-Oracle-Folder-Structure/repository/archive.zip
 
-wget http://download.oracle.com/otn/linux/instantclient/11204/instantclient-sqlplus-linux.x64-11.2.0.4.0.zip
+sudo unzip XUbuntu-Oracle-Folder-Structure-master-1cb06a80c2128fa0e15eb0c9700c92898e9c8b1f
 
-wget http://download.oracle.com/otn/linux/instantclient/11204/instantclient-sdk-linux.x64-11.2.0.4.0.zip
+cd XUbuntu-Oracle-Folder-Structure-master-1cb06a80c2128fa0e15eb0c9700c92898e9c8b1f
+
+sudo cp opt/ / -r
 
 cd /opt/oracle
-
-sudo unzip /tmp/instantclient-basic-linux.x64-11.2.0.4.0.zip
-sudo unzip /tmp/instantclient-sqlplus-linux.x64-11.2.0.4.0.zip
-sudo unzip /tmp/instantclient-sdk-linux.x64-11.2.0.4.0.zip
 
 sudo apt-get install libaio1
 
