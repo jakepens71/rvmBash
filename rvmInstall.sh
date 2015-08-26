@@ -86,7 +86,7 @@ sudo apt-get update -y
 
 sudo apt-get install sublime-text -y
 
-echo "Installing gruny bower yeoman"
+echo "Installing grunt bower yeoman"
 
 npm install -g yo bower grunt-cli gulp
 
