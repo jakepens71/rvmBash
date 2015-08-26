@@ -72,7 +72,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | b
 
 nvm install stable
 
-echo "nvm current stable" | sudo tee .bashrc -a
+echo "nvm use stable" | sudo tee .bashrc -a
 
 source ~/.bashrc 
 
