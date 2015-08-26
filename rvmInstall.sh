@@ -58,7 +58,7 @@ cd instantclient_11_2
 
 sudo ln -s libclntsh.so.11.1 libclntsh.so
 
-echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_11_2" | sudo tee .bashrc -a 
+echo 'export LD_LIBRARY_PATH=/opt/oracle/instantclient_11_2' >> ~/.bashrc
 
 source ~/.bashrc
 
