@@ -34,6 +34,20 @@ echo "Installing git"
 
 sudo apt-get install git-core -y
 
+echo "Setting up github SSH KEY *REQURES USER INPUT*"
+if [ -f "$HOME/.ssh/id_rsa.pub" ]
+then
+	echo "file exists"
+else
+	echo "file does not exist"
+	echo "Enter your email address you use for Github"
+	read email
+	ssh-keygen -t rsa -b 4096 -C "$email"
+	ssh-agent -s
+	eval $(ssh-agent -s)
+	ssh-add ~/.ssh/id_rsa
+fi
+
 echo "Installing Oracle Instant Client"
 
 #sudo mkdir -p /opt/oracle
